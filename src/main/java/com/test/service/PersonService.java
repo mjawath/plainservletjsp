@@ -20,10 +20,10 @@ private static ArrayList list = new ArrayList();
         for (int i = 0; i < 100; i++) {            
             Person person = new Person();
         
-            person.setId("id "+i);
+            person.setId(String.valueOf(i));
             person.setCountry("country "+i);
             person.setName("Name "+i);
-            list.add(list);
+            list.add(person);
         }
     }
 

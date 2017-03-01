@@ -36,7 +36,7 @@ protected void doPost(HttpServletRequest request,
 		String country = request.getParameter("country");
 	
                 Person p = new Person();
-                p.setId("id"+Math.random());
+                p.setId(String.valueOf(Math.random()));
                 p.setName("name"+name);
                 p.setCountry("country"+country);
                 
@@ -45,7 +45,7 @@ protected void doPost(HttpServletRequest request,
                 List<Person> persons = personService.getAllPersons();                
                 request.setAttribute("persons", persons);
                 
-                System.out.println("inside the TestServlet...........");
+                System.out.println("inside the TestServlet......some more update....."+persons.size());
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/persons.jsp");
 		rd.forward(request, response);                        
 	}    

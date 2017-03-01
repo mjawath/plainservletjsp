@@ -1,6 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"  %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +28,8 @@ table,th,td {
 	<%-- Edit Request --%>
 	<c:if test="${requestScope.person ne null}">
 		<form action='<c:out value="${editURL}"></c:out>' method="post">
-			ID: <input type="text" value="${requestScope.person.id}"
+			
+                        ID: <input type="text" value="${requestScope.person.id}"
 				readonly="readonly" name="id"><br> Name: <input
 				type="text" value="${requestScope.person.name}" name="name"><br>
 			Country: <input type="text" value="${requestScope.person.country}"
@@ -58,7 +58,7 @@ table,th,td {
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
-				<c:forEach items="${requestScope.persons}" var="person">
+					<c:forEach items="${requestScope.persons}" var="person">
 					<c:url value="/editPerson" var="editURL">
 						<c:param name="id" value="${person.id}"></c:param>
 					</c:url>
